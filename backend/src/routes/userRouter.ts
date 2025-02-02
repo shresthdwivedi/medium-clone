@@ -1,8 +1,9 @@
+import { withAccelerate } from '@prisma/extension-accelerate';
 import { Hono } from 'hono'
-import { withAccelerate } from '@prisma/extension-accelerate'
 import { PrismaClient } from '@prisma/client/edge'
 import { sign } from 'hono/jwt'
 import { signupInputs, signinInputs } from 'shresth10-medium-common'  
+import { cors } from 'hono/cors'
 
 export const userRouter = new Hono<{
     Bindings: {
@@ -10,6 +11,13 @@ export const userRouter = new Hono<{
       JWT_SECRET: string,
     }
   }>()
+
+userRouter.use('*', cors({
+    origin: '*',  
+    allowMethods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowHeaders: ['Authorization', 'Content-Type'],
+    credentials: true,  
+}))
   
 userRouter.post('/signup', async (c) => {
   

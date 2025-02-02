@@ -1,8 +1,9 @@
+import { withAccelerate } from '@prisma/extension-accelerate';
 import { Hono } from 'hono'
-import { withAccelerate } from '@prisma/extension-accelerate'
 import { PrismaClient } from '@prisma/client/edge'
 import { verify } from 'hono/jwt'
 import { createBlog, updateBlog } from 'shresth10-medium-common';
+import { cors } from 'hono/cors';
 
 export const blogRouter = new Hono<{
     Bindings: {
@@ -10,6 +11,12 @@ export const blogRouter = new Hono<{
       JWT_SECRET: string,
     }
 }>()
+
+blogRouter.use('*', cors({
+    origin: '*', 
+    allowMethods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowHeaders: ['Authorization', 'Content-Type']
+}));
 
 blogRouter.use('/', async (c, next) => {
     const authHeader = c.req.header('authorization') || "";
@@ -97,7 +104,7 @@ blogRouter.put('/', async (c) => {
     }
 })
   
-//pagination needed here
+
 blogRouter.get('/bulk', async (c) => {
     const prisma = new PrismaClient({
         datasourceUrl: c.env.DATABASE_URL,

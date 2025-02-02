@@ -1,6 +1,4 @@
 import { Hono } from 'hono'
-import { withAccelerate } from '@prisma/extension-accelerate'
-import { PrismaClient } from '@prisma/client/edge'
 import { userRouter } from './routes/userRouter'
 import { blogRouter } from './routes/blogRouter'
 

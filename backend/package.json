@@ -5,10 +5,10 @@
     "deploy": "wrangler deploy --minify src/index.ts"
   },
   "dependencies": {
-    "@prisma/client": "^5.19.1",
-    "@prisma/extension-accelerate": "^1.1.0",
+    "@prisma/client": "^5.22.0",
+    "@prisma/extension-accelerate": "^1.2.1",
     "hono": "^4.6.1",
-    "prisma": "^5.19.1",
+    "prisma": "^5.22.0",
     "shresth10-medium-common": "^1.0.3",
     "zod": "^3.23.8"
   },
