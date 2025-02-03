@@ -3,7 +3,7 @@ compatibility_date = "2024-09-16"
 compatibility_flags = [ "nodejs_compat" ]
 
 [vars]
-DATABASE_URL="postgresql://neondb_owner:npg_3XGKFrZP1yWf@ep-winter-unit-a19eboei-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require"
+DATABASE_URL="prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiOTc1MjY0OTYtOTU3ZS00N2EzLTkxMDItMDNiY2NmYjE2MjA5IiwidGVuYW50X2lkIjoiMWE3YTA3OGViNzQxNzM1ZTYzYTE3ZWFmOTNmMGMwYTEzY2M3ZWIwMzBlYTAzZTgxZTI0NmViYzM2Y2JmZmY4OCIsImludGVybmFsX3NlY3JldCI6ImNmMWNlZTg4LTNkZmQtNDY5Yy04NjBjLTViNTViMjM2ODI5YSJ9.s2NRWFpXPOSWZfoLrNLnty00Di4pLRmCi5AY4DKWwwI"
 JWT_SECRET="secret"
 # MY_VAR = "my-variable"
 
